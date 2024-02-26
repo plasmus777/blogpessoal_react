@@ -7,13 +7,13 @@ interface CardPostagemProps {
 
 function CardPostagem({ post }: CardPostagemProps) {
     return (
-        <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
-            <div>
+        <div className='border-green-900 border flex flex-col rounded overflow-hidden justify-between'>
+            <div className='bg-lime-500 size-full'>
                 <div className="flex w-full bg-green-800 py-2 px-4 items-center gap-4">
                     <img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />
                     <h3 className='text-lg font-bold text-center uppercase text-white'>{post.titulo}</h3>
                 </div>
-                <div className='bg-lime-500'>
+                <div>
                     <div className='bg-green-700'>
                         <h4 className='text-lg font-semibold uppercase text-white'>{post.usuario?.nome}</h4>
                     </div>
