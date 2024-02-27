@@ -6,6 +6,7 @@ import Tema from "../../../models/Tema";
 import { DNA } from 'react-loader-spinner';
 import { buscar } from "../../../services/Service";
 import { Plus } from "@phosphor-icons/react";
+import { toastAlerta } from "../../../util/toastAlerta";
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -22,7 +23,7 @@ function ListaTemas() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, por favor realize o login novamente.')
+        toastAlerta('O token expirou, por favor realize o login novamente.', 'info')
         handleLogout()
       }
     }
@@ -30,7 +31,7 @@ function ListaTemas() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado.');
+      toastAlerta('Você precisa estar logado.', 'info');
       navigate('/login');
     }
   }, [token]);

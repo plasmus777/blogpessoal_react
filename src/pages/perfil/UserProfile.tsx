@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useEffect, useState } from "react";
 import { PencilSimple } from "@phosphor-icons/react";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function UserProfile(){
   let navigate = useNavigate();
@@ -12,7 +13,7 @@ function UserProfile(){
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado.');
+      toastAlerta('Você precisa estar logado.', 'info');
       navigate('/login');
     }
   }, [token]);
