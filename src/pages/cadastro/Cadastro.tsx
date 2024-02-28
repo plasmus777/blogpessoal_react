@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
+import { toastAlerta } from '../../util/toastAlerta'
 
 function Cadastro() {
 
@@ -62,8 +63,8 @@ function Cadastro() {
 
     } else {
       toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
-      setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
-      setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
+      setUsuario({ ...usuario, senha: "" })
+      setConfirmaSenha("")
     }
   }
 

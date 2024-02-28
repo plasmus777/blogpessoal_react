@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardTemas from "../cardTemas/CardTemas";
 import Tema from "../../../models/Tema";
-import { DNA } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
 import { buscar } from "../../../services/Service";
 import { Plus } from "@phosphor-icons/react";
 import { toastAlerta } from "../../../util/toastAlerta";
@@ -43,13 +43,13 @@ function ListaTemas() {
   return (
     <>
       {temas.length === 0 && (
-        <DNA
+        <ThreeCircles
           visible={true}
           height="200"
           width="200"
-          ariaLabel="dna-loading"
+          ariaLabel="three-circles-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+          wrapperClass="three-circles-wrapper mx-auto"
         />
       )}
       <div className="flex justify-center w-full py-4">
@@ -61,12 +61,12 @@ function ListaTemas() {
               </>
             ))}
 
-            <Link to='/cadastroTema'><Plus size={190} weight='bold' color='lightgreen' className="border bg-green-600 hover:bg-green-800 flex items-center justify-center rounded-2xl"/></Link>
+            <Link to='/cadastroTema'><Plus size={190} weight='bold' color='lightgreen' className="border bg-green-600 hover:bg-green-800 flex items-center justify-center rounded-2xl" /></Link>
           </div>
         </div>
       </div>
     </>
   );
-  }
-  
-  export default ListaTemas;
+}
+
+export default ListaTemas;

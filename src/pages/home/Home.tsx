@@ -1,11 +1,10 @@
-//import { useNavigate, Link } from 'react-router-dom'
-import homeLogo from '../../assets/img/home.jpg'
+import { useNavigate } from 'react-router-dom'
 import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem'
 
-//let navigate = useNavigate()
-
 function Home() {
+  let navigate = useNavigate()
+
   return (
     <>
       <div className="bg-lime-700 flex justify-center aspect-auto">
@@ -16,12 +15,12 @@ function Home() {
 
             <div className="flex justify-around gap-4">
               <ModalPostagem />
-              <button className='rounded bg-lime-500 hover:bg-lime-900 text-white py-2 px-4'>Ver postagens</button>
+              <button className='rounded bg-lime-500 hover:bg-lime-900 text-white py-2 px-4' onClick={() => navigate('/postagens')}>Ver postagens</button>
             </div>
           </div>
 
           <div className="flex justify-center ">
-            <img src={homeLogo} alt="" className='w-2/3' />
+            <img src="https://icon-library.com/images/nature-icon/nature-icon-12.jpg" alt="" className='w-2/3' />
 
           </div>
         </div>
